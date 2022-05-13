@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style = "font-family:arial,georgia,serif">
+    <h1>Another example of using template loader function</h1>
+    <p1 style="color: green">Your name is {{name}}</p1>
+    <br>
+    <p2 style="color: orange">And your last name is {{last_name}}</p2>
+
+    <h2>The request of this url was made at {{now}}</h2>
+
+    <h3>Grade report</h3>
+    <ul>
+        {% for grade in grades %}
+            {% if grade > 5%}
+                <li style="color: green">{{grade}} - Approved</li>
+            {% else %}
+                <li style="color: red">{{grade}} - Reproved</li>
+            {% endif %}
+        {% endfor %}
+
+    </ul>
+</body>
+</html>
