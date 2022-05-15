@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from datetime import datetime
 from django.template import Template, Context, loader
+from coder_app.models import Group
 
 
 def saludo(request):  # Nuestra primera vista :)
@@ -91,3 +92,16 @@ def template_loader(self, name: str = 'name', last_name: str = 'Last_name'):
     documento = template.render(context_dict)
 
     return HttpResponse(documento)
+
+
+def group_data(self, name: str = 'group', code: int = 0):
+    template = loader.get_template('group_template.html')
+
+    group = Group( name=name, code=code)
+    group.save()
+
+    context_dict = {
+        'group': group
+    }
+    render = template.render(context_dict)
+    return HttpResponse(render)

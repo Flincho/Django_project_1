@@ -14,4 +14,6 @@ urlpatterns = [
     path('segundavista/', segunda_vista),
     path('identification_templates/<str:name>/<str:last_name>/', template_using_contxt),
     path('template_loader/<str:name>/<str:last_name>/', template_loader),
+    path('new_group/<str:name>/<int:code>/', group_data),
+
 ]
