@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Family Member</title>
+    <style>
+        tr:hover {background-color: silver}
+    </style>
+</head>
+<body style="font-family: arial">
+    <p1 style="font-family:verdana; text-align:center; font-size:1.6em;
+    background-color:crimson; border:3px; border-style:solid; width:25%;
+    margin:3px; padding:3px; border-color:crimson; border-radius:15px">
+    <b>Memeber Retrive</b></p1>
+    <br><br><br>
+    <table border="1">
+        <tr>
+        <th style="padding: 5px">Name</th>
+        <th style="padding: 5px">Birthday</th>
+        <th style="padding: 5px">Kingship Degree</th>
+        <th style="padding: 5px">Favorite Ice Cream Flavor</th>
+        </tr>
+        {% for mem in member %}
+            <tr>
+            <td style="padding: 5px">{{mem.name}} {{mem.last_name}}</td><td>{{mem.birthday}}</td>
+            <td style="padding: 5px">{{mem.kinship_deg}}</td><td>{{mem.icecream_flavor}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

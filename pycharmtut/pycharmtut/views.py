@@ -105,3 +105,6 @@ def group_data(self, name: str = 'group', code: int = 0):
     }
     render = template.render(context_dict)
     return HttpResponse(render)
+
+
+
