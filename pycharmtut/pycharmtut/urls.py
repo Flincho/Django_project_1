@@ -1,5 +1,5 @@
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from .views import *
 
 
@@ -15,6 +15,6 @@ urlpatterns = [
     path('identification_templates/<str:name>/<str:last_name>/', template_using_contxt),
     path('template_loader/<str:name>/<str:last_name>/', template_loader),
     path('new_group/<str:name>/<int:code>/', group_data),
-    path('new_member/<str:name>/<str:last_name>/<birthday>/<kinship_deg>/<str:icecream_flavor>/', new_member),
+    path('family_db/', include('family_db.urls')),
 
 ]

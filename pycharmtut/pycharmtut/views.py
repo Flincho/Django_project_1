@@ -2,7 +2,6 @@ from django.http import HttpResponse
 from datetime import datetime
 from django.template import Template, Context, loader
 from coder_app.models import Group
-from family_db.models import Member
 
 
 def saludo(request):  # Nuestra primera vista :)
@@ -108,14 +107,4 @@ def group_data(self, name: str = 'group', code: int = 0):
     return HttpResponse(render)
 
 
-def new_member(self, name: str = 'name', last_name: str = 'name', birthday: datetime = 1-1-1999, kinship_deg: int = 0, icecream_flavor: str = None):
-    template = loader.get_template('newmember_template.html')
 
-    member = Member(name=name, last_name=last_name, birthday=birthday, kinship_deg=kinship_deg, icecream_flavor=icecream_flavor )
-    member.save()
-
-    context_dict = {
-        'member': member,
-    }
-    render = template.render(context_dict)
-    return HttpResponse(render)
